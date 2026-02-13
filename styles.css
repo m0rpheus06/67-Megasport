@@ -416,6 +416,110 @@ section p {
     box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
 }
 
+/* Trainingszeiten Tabelle - Verbesserte Lesbarkeit */
+.training-schedule {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+.training-schedule h3 {
+    color: #1a202c;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(45deg, #FF6B35, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.training-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.training-schedule th {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: white;
+    padding: 1.2rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.training-schedule th:first-child {
+    border-radius: 12px 0 0 0;
+}
+
+.training-schedule th:last-child {
+    border-radius: 0 12px 0 0;
+}
+
+.training-schedule td {
+    padding: 1.2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: white;
+}
+
+.training-schedule tr:nth-child(even) td {
+    background: rgba(247, 250, 252, 0.8);
+}
+
+.training-schedule tr:hover td {
+    background: rgba(255, 107, 53, 0.05);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+.training-schedule tr:last-child td:first-child {
+    border-radius: 0 0 0 12px;
+}
+
+.training-schedule tr:last-child td:last-child {
+    border-radius: 0 0 12px 0;
+}
+
+/* Spezielle Styling für Trainingstyp */
+.training-type {
+    background: linear-gradient(135deg, #FF6B35, #FFD700);
+    color: #1a202c;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+/* Zeit-Styling */
+.training-time {
+    color: #FF6B35;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Ort-Styling */
+.training-location {
+    color: #4a5568;
+    font-weight: 500;
+}
+
 .training-times {
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
     color: white;
@@ -541,6 +645,30 @@ footer p {
         font-size: 1.5rem;
         min-height: 3rem;
     }
+
+    /* Responsive Trainingszeiten */
+    .training-schedule {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .training-schedule table {
+        font-size: 0.9rem;
+    }
+    
+    .training-schedule th,
+    .training-schedule td {
+        padding: 1rem 0.8rem;
+    }
+    
+    .training-schedule h3 {
+        font-size: 1.5rem;
+    }
+    
+    .training-type {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -579,6 +707,60 @@ footer p {
     nav a {
         font-size: 0.9rem;
         padding: 0.5rem 0.8rem;
+    }
+
+    /* Mobile Trainingszeiten - Stapel-Layout */
+    .training-schedule table {
+        font-size: 0.8rem;
+    }
+    
+    .training-schedule th,
+    .training-schedule td {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    /* Stapel-Layout für sehr kleine Bildschirme */
+    .training-schedule table,
+    .training-schedule thead,
+    .training-schedule tbody,
+    .training-schedule th,
+    .training-schedule td,
+    .training-schedule tr {
+        display: block;
+    }
+    
+    .training-schedule thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .training-schedule tr {
+        background: white;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    .training-schedule td {
+        border: none;
+        position: relative;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .training-schedule td:before {
+        content: attr(data-label) ": ";
+        font-weight: 700;
+        color: #FF6B35;
+        display: inline-block;
+        width: 100px;
+    }
+    
+    .training-schedule td:last-child {
+        border-bottom: none;
     }
 }
 
