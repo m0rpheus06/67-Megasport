@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Disclaimer Pop-up -->
+    <div id="disclaimer-overlay" class="disclaimer-overlay">
+        <div class="disclaimer-popup">
+            <div class="disclaimer-header">
+                <h3>📚 Schulprojekt - Disclaimer</h3>
+            </div>
+            <div class="disclaimer-content">
+                <p><strong>Wichtiger Hinweis:</strong></p>
+                <p>Diese Website wurde als <strong>Schulprojekt</strong> erstellt und dient ausschließlich zu Bildungszwecken.</p>
+                <ul>
+                    <li>Es handelt sich um kein echtes Unternehmen</li>
+                    <li>Keine realen Dienstleistungen werden angeboten</li>
+                    <li>Alle Inhalte sind fiktiv</li>
+                </ul>
+                <p>Vielen Dank für Ihr Verständnis!</p>
+            </div>
+            <div class="disclaimer-footer">
+                <button id="disclaimer-close" class="disclaimer-button">Verstanden</button>
+            </div>
+        </div>
+    </div>
+
     <header>
         <h1>67 Megasport</h1>
         <p>Dein Partner für professionelles Fitnesstraining</p>
@@ -57,5 +79,49 @@
         <p>&copy; 2026 67 Megasport. Alle Rechte vorbehalten.</p>
         <p>Kontakt: kontakt@67megasport.de</p>
     </footer>
+
+    <script>
+        // Disclaimer Pop-up Funktionalität
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('disclaimer-overlay');
+            const closeButton = document.getElementById('disclaimer-close');
+            
+            // Prüfen ob Disclaimer bereits akzeptiert wurde (24 Stunden)
+            const disclaimerAccepted = localStorage.getItem('disclaimerAccepted');
+            const acceptedTime = localStorage.getItem('disclaimerTime');
+            const currentTime = new Date().getTime();
+            const oneDayInMs = 24 * 60 * 60 * 1000; // 24 Stunden in Millisekunden
+            
+            // Zeige Pop-up wenn noch nicht akzeptiert oder mehr als 24h her
+            if (!disclaimerAccepted || (currentTime - acceptedTime) > oneDayInMs) {
+                overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Verhindert Scrollen
+            }
+            
+            // Pop-up schließen
+            closeButton.addEventListener('click', function() {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Scrollen wieder erlauben
+                
+                // Speichere Akzeptierung für 24 Stunden
+                localStorage.setItem('disclaimerAccepted', 'true');
+                localStorage.setItem('disclaimerTime', currentTime.toString());
+            });
+            
+            // Pop-up schließen wenn außerhalb geklickt wird
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeButton.click();
+                }
+            });
+            
+            // ESC-Taste zum Schließen
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.style.display === 'flex') {
+                    closeButton.click();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
