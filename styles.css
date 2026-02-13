@@ -877,3 +877,68 @@ footer p {
         font-size: 1.5rem;
     }
 }
+
+/* Datawrapper Tabellen - Korrekte Anzeige sicherstellen */
+.datawrapper-chart, 
+.dw-chart,
+iframe[src*="datawrapper.dwcdn.net"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Datawrapper Container */
+.datawrapper-container {
+    width: 100%;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* Datawrapper Tabellen spezifisch */
+.dw-table {
+    width: 100% !important;
+    font-family: inherit !important;
+}
+
+.dw-table table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+.dw-table th {
+    background: linear-gradient(135deg, #FF6B35, #FFD700) !important;
+    color: white !important;
+    padding: 15px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+}
+
+.dw-table td {
+    padding: 12px 15px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #4a5568 !important;
+}
+
+/* Responsive für Datawrapper */
+@media (max-width: 768px) {
+    .datawrapper-container {
+        margin: 1rem 0;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
+    iframe[src*="datawrapper.dwcdn.net"] {
+        min-height: 250px;
+    }
+}
+
+/* Verhindert CSS-Konflikte mit Datawrapper */
+.dw-chart * {
+    box-sizing: content-box !important;
+}
