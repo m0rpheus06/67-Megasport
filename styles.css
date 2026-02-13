@@ -520,36 +520,47 @@ section p {
     font-weight: 500;
 }
 
+/* Training Times Container - Einheitliches Design */
 .training-times {
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    color: white;
-    padding: 3rem;
-    border-left: 5px solid #FF6B35;
-    margin-top: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background-color: #f9f9f9 !important;
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    margin-top: 2rem !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 107, 53, 0.1);
 }
 
 .training-times h3 {
-    color: #FF6B35;
-    margin-bottom: 1.5rem;
+    color: #667eea !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.8rem;
     font-weight: 700;
-    font-size: 1.5rem;
+    text-align: left;
 }
 
-.training-times ul {
-    list-style: none;
-    line-height: 2;
+/* Datawrapper iframe in training-times */
+.training-times iframe[src*="datawrapper"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 224px !important;
+    border: none !important;
+    background: white !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-.training-times li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
+/* Spezifische Datawrapper IDs */
+#datawrapper-chart-wahjt,
+#datawrapper-chart-hoPwm {
+    width: 100% !important;
+    height: auto !important;
+    border: none !important;
+    border-radius: 8px;
 }
 
-.training-times li:last-child {
-    border-bottom: none;
+/* Verhindert CSS-Konflikte */
+.training-times * {
+    box-sizing: border-box !important;
 }
 
 footer {
@@ -669,6 +680,14 @@ footer p {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
     }
+
+    .training-times {
+        padding: 1.5rem !important;
+    }
+    
+    .training-times h3 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -761,6 +780,14 @@ footer p {
     
     .training-schedule td:last-child {
         border-bottom: none;
+    }
+
+    .training-times {
+        padding: 1rem !important;
+    }
+    
+    .training-times h3 {
+        font-size: 1.3rem;
     }
 }
 
@@ -941,38 +968,4 @@ iframe[src*="datawrapper.dwcdn.net"] {
 /* Verhindert CSS-Konflikte mit Datawrapper */
 .dw-chart * {
     box-sizing: content-box !important;
-}
-
-
-/* Fix für Trainingszeiten Datawrapper */
-.training-times iframe[src*="datawrapper"] {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 224px !important;
-    border: none !important;
-    background: white !important;
-}
-
-.training-times {
-    background-color: #f9f9f9 !important;
-    padding: 2rem !important;
-    border-radius: 8px !important;
-    margin-top: 2rem !important;
-}
-
-.training-times h3 {
-    color: #667eea !important;
-    margin-bottom: 1rem !important;
-}
-
-/* Datawrapper spezifische IDs */
-#datawrapper-chart-wahjt {
-    width: 100% !important;
-    height: auto !important;
-    border: none !important;
-}
-
-/* Verhindert CSS-Konflikte */
-.training-times * {
-    box-sizing: border-box !important;
 }
