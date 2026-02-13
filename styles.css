@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #FF6B35 100%);
     color: white;
     padding: 2rem 0;
     text-align: center;
@@ -53,7 +53,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #667eea;
+    color: #FF6B35;
 }
 
 main {
@@ -74,7 +74,7 @@ section h2 {
     color: #667eea;
     margin-bottom: 1rem;
     font-size: 2rem;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid #FF6B35;
     padding-bottom: 0.5rem;
 }
 
@@ -86,7 +86,7 @@ section p {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #FF6B35 100%);
     color: white;
     text-align: center;
     padding: 3rem 2rem;
@@ -121,6 +121,7 @@ section p {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #FF6B35;
 }
 
 .card:hover {
@@ -141,7 +142,7 @@ section p {
 
 .button {
     display: inline-block;
-    background-color: #667eea;
+    background-color: #FF6B35;
     color: white;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
@@ -153,13 +154,13 @@ section p {
 }
 
 .button:hover {
-    background-color: #764ba2;
+    background-color: #667eea;
     transform: scale(1.05);
 }
 
 .contact-button {
     display: inline-block;
-    background-color: #667eea;
+    background-color: #FF6B35;
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -172,7 +173,7 @@ section p {
 }
 
 .contact-button:hover {
-    background-color: #764ba2;
+    background-color: #667eea;
     transform: scale(1.05);
 }
 
