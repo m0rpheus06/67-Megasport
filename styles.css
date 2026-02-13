@@ -942,3 +942,37 @@ iframe[src*="datawrapper.dwcdn.net"] {
 .dw-chart * {
     box-sizing: content-box !important;
 }
+
+
+/* Fix für Trainingszeiten Datawrapper */
+.training-times iframe[src*="datawrapper"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 224px !important;
+    border: none !important;
+    background: white !important;
+}
+
+.training-times {
+    background-color: #f9f9f9 !important;
+    padding: 2rem !important;
+    border-radius: 8px !important;
+    margin-top: 2rem !important;
+}
+
+.training-times h3 {
+    color: #667eea !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Datawrapper spezifische IDs */
+#datawrapper-chart-wahjt {
+    width: 100% !important;
+    height: auto !important;
+    border: none !important;
+}
+
+/* Verhindert CSS-Konflikte */
+.training-times * {
+    box-sizing: border-box !important;
+}
